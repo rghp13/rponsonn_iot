@@ -5,11 +5,11 @@ metadata:
   labels:
     app: playground
 spec:
-  type: NodePort
+  type: ClusterIP
   selector:
     app: playground
   ports:
-    - port: 8888
-      nodePort: 30888
-      targetPort: 8888
+    - name: http
+      port: 8888
+      targetPort: http
       protocol: TCP
